@@ -1,5 +1,5 @@
-export const asyncWrapper = (callback) => {
-  return (req, res, next) => {
-    callback(req, res, next).catch(next);
+export const AsyncWrapper = (callback) => {
+  return async (req, res, next) => {
+    await callback(req, res, next).catch(next);
   };
 };
